@@ -31,21 +31,10 @@ class MetalDevice {
     internal var outputTexture: MTLTexture?
     
     private init() {
-        //        let devices = MTLCopyAllDevices()
-        //        for device in devices {
-        //            print(device.name)
-        //        }
-        device = MTLCopyAllDevices()[0]
-        //        device = MTLCreateSystemDefaultDevice()!
+        device = MTLCreateSystemDefaultDevice()!
         commandQueue = device.makeCommandQueue()!
         
         activeCommandBuffer = commandQueue.makeCommandBuffer()!
-        
-//        defaultLibrary = device.makeDefaultLibrary()!
-//        let mstr : String? = Bundle.main.path(forResource: "test2", ofType: "metallib")//it is ok
-//        let mstr = "/Users/eric/Desktop/test2.metallib"
-//
-//        defaultLibrary = try! device.makeLibrary(filepath: mstr)
         
         let libraryPath = Bundle(for: Renderer.self).path(forResource: "default", ofType: "metallib")!
         defaultLibrary = try! device.makeLibrary(filepath: libraryPath) // TODO: do something

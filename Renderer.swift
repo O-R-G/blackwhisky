@@ -317,15 +317,6 @@ extension Renderer: MTKViewDelegate {
         commandBuffer.commit()
         
         directions = positions
-        let nowTime = Date().timeIntervalSinceReferenceDate
-        if (nowTime - lastTime > timeOut) {
-            if (nowTime - startTime > 5) {
-                timeOut = 5.0
-            }
-            lastTime = nowTime
-            let position = float2(Float(arc4random_uniform(UInt32(view.bounds.width))),Float(arc4random_uniform(UInt32(view.bounds.height))))
-            positions = FloatTuple(position, float2(), float2(), float2(), float2())
-        }
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {

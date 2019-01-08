@@ -173,6 +173,7 @@ fragment half2 advect(VertexOut fragmentIn [[stage_in]], texture2d<float, access
 //    half2 color = 0.998h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
     half2 color = 0.999h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
 //    half2 color = 1.0h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
+//    half2 color = 1.001h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
     return color.xy;
 }
 
