@@ -52,7 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0751782021E5111900209625 /* BlackWhiskey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackWhiskey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0751782021E5111900209625 /* Black Whiskey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Black Whiskey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0751782221E5111900209625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0751782421E5111900209625 /* RenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderViewController.swift; sourceTree = "<group>"; };
 		0751782721E5111900209625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 			children = (
 				9336711F1FFC0E8A007CCCEB /* BlackWhiskeySaver.saver */,
 				077322A321091C6A009027DF /* Runner.app */,
-				0751782021E5111900209625 /* BlackWhiskey.app */,
+				0751782021E5111900209625 /* Black Whiskey.app */,
 				0751783C21E516A100209625 /* BlackWhiskeyMacOS.app */,
 			);
 			name = Products;
@@ -203,9 +203,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0751781F21E5111900209625 /* BlackWhiskey */ = {
+		0751781F21E5111900209625 /* Black Whiskey */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0751782F21E5111B00209625 /* Build configuration list for PBXNativeTarget "BlackWhiskey" */;
+			buildConfigurationList = 0751782F21E5111B00209625 /* Build configuration list for PBXNativeTarget "Black Whiskey" */;
 			buildPhases = (
 				0751781C21E5111900209625 /* Sources */,
 				0751781D21E5111900209625 /* Frameworks */,
@@ -215,9 +215,9 @@
 			);
 			dependencies = (
 			);
-			name = BlackWhiskey;
+			name = "Black Whiskey";
 			productName = BlackWhiskey;
-			productReference = 0751782021E5111900209625 /* BlackWhiskey.app */;
+			productReference = 0751782021E5111900209625 /* Black Whiskey.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0751783B21E516A100209625 /* BlackWhiskeyMacOS */ = {
@@ -322,7 +322,7 @@
 			targets = (
 				9336711E1FFC0E8A007CCCEB /* BlackWhiskeySaver */,
 				077322A221091C6A009027DF /* Runner */,
-				0751781F21E5111900209625 /* BlackWhiskey */,
+				0751781F21E5111900209625 /* Black Whiskey */,
 				0751783B21E516A100209625 /* BlackWhiskeyMacOS */,
 			);
 		};
@@ -479,7 +479,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.BlackWhiskey";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.blackwhiskey";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -501,7 +501,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.BlackWhiskey";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.o-r-g.blackwhiskey";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -744,7 +744,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0751782F21E5111B00209625 /* Build configuration list for PBXNativeTarget "BlackWhiskey" */ = {
+		0751782F21E5111B00209625 /* Build configuration list for PBXNativeTarget "Black Whiskey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0751783021E5111B00209625 /* Debug */,
