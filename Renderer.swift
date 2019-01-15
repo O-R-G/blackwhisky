@@ -38,7 +38,8 @@ class Renderer: NSObject {
     static let MaxBuffers = 3
     
     //Adjust this to reduce or increase the size of the slab textures. Reasonable values are in the range [0.5, 3.0]
-    static let ScreenScaleAdjustment: Float = 2.0
+    // ** scale **
+    static let ScreenScaleAdjustment: Float = 1
     
     //Vertex and index data
     static let vertexData: [VertexData] = [
@@ -120,6 +121,7 @@ class Renderer: NSObject {
     private final func initBuffers(width: Int, height: Int) {
         let bufferSize = MemoryLayout<StaticData>.stride
         
+        // ** ink radius **
         var staticData = StaticData(positions: (float2(), float2(), float2(), float2(), float2()),
                                     impulses: (float2(), float2(), float2(), float2(), float2()),
                                     impulseScalar: float2(),
@@ -144,6 +146,7 @@ class Renderer: NSObject {
             let alteredPositions = positions / Renderer.ScreenScaleAdjustment
             let impulses = (positions - directions) / Renderer.ScreenScaleAdjustment
             
+            // ** impulse **
             bufferData.pointee.positions = alteredPositions
             bufferData.pointee.impulses = impulses
             bufferData.pointee.impulseScalar = float2(0.8, 0.0)
@@ -295,12 +298,15 @@ extension Renderer: MTKViewDelegate {
             applyForceScalar(commandBuffer: commandBuffer, dataBuffer: dataBuffer, destination: density)
         }
         
+        // ** include vortices **
         computeVorticity(commandBuffer: commandBuffer, dataBuffer: dataBuffer, velocity: velocity, destination: velocityVorticity)
         computeVorticityConfinement(commandBuffer: commandBuffer, dataBuffer: dataBuffer, velocity: velocity, vorticity: velocityVorticity, destination: velocity)
         
         computeDivergence(commandBuffer: commandBuffer, dataBuffer: dataBuffer, velocity: velocity, destination: velocityDivergence)
         
+        // ** change step size **
         for _ in 0..<40 {
+//            for _ in 0..<2 {
             computePressure(commandBuffer: commandBuffer, dataBuffer: dataBuffer, x: pressure, b: velocityDivergence, destination: pressure)
         }
         

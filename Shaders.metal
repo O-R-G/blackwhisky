@@ -43,8 +43,10 @@ fragment half4 visualizeScalar(VertexOut fragmentIn [[stage_in]], texture2d<floa
     
     half4 color = half4(tex2d.sample(sampler2d, fragmentIn.textureCoordinates));
     
+    // ** color **
+    
     //    return half4(half3(0.0, 0.06, 0.19) * abs(color.xxx), 1.0);
-    return half4(half3(1.0, 1.0, 1.0) * abs(color.xxx), 1.0);
+    return half4(half3(0.5, 0.5, 0.5) * abs(color.xxx), 0.1);
 //    return half4(half3(0.0, 0.0, 1.0), 1.0);
     //    float rnd = rand(color.x, color.x, color.x);
     //    if (rnd < 0.39) {
@@ -170,7 +172,9 @@ fragment half2 advect(VertexOut fragmentIn [[stage_in]], texture2d<float, access
     
     float2 uv = (fragmentIn.textureCoordinates * screenSize) - velocity.sample(fluid_sampler, fragmentIn.textureCoordinates).xy;
     
-//    half2 color = 0.998h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
+    // ** diffusion **
+
+    //    half2 color = 0.998h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
     half2 color = 0.999h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
 //    half2 color = 1.0h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
 //    half2 color = 1.001h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
@@ -195,7 +199,7 @@ fragment half2 divergence(VertexOut fragmentIn [[stage_in]], texture2d<float, ac
     
     float scale = 0.5;
     float divergence = scale * (vr - vl + vt - vb);
-    
+
     return half2(divergence, 0.0);
 }
 
