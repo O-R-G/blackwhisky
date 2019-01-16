@@ -2,6 +2,7 @@
 //  saverView.swift
 //  BlackWhiskey
 //
+    
 //  Created by david reinfurt on 1/2/18.
 //  Copyright © 2018 O-R-G inc. All rights reserved.
 //
@@ -15,7 +16,7 @@ class saverView: ScreenSaverView {
     
     var renderer: Renderer!
     var metalView: MTKView!
-    
+
     weak var update: Timer?
     
     override init?(frame: NSRect, isPreview: Bool) {
@@ -28,10 +29,28 @@ class saverView: ScreenSaverView {
             renderer = Renderer(metalView: metalView)
             metalView.delegate = renderer
             self.addSubview(metalView)
-            startSwirl()
+            self.startSwirl()
+            self.reset(milliseconds: 600000)
         }
     }
         
+    func reset(milliseconds: Int) {
+
+        /*
+            reset the metalView every milliseconds
+            wipes the screen and starts metalView from scratch
+            avoids too much fluid velocity
+        */
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(milliseconds)) {
+            self.renderer = Renderer(metalView: self.metalView)
+            self.metalView.delegate = self.renderer
+            self.startSwirl()
+            self.reset(milliseconds: milliseconds)
+            print("** reset **")
+        }
+    }
+
     func startSwirl() {
         
         /*
@@ -102,7 +121,7 @@ class saverView: ScreenSaverView {
             position_next.y = min(max(position_next.y, Float(Float(y_max) * -1.0)), Float(y_max))
 
             self!.renderer.updateInteraction(points: FloatTuple(position_next, float2(), float2(), float2(), float2()), in: self!.metalView)
-            print(position_next.x, position_next.y)
+            // print(position_next.x, position_next.y)
         })
         
         // 4. stop update timer after duration, wait (pause) & start new
@@ -122,7 +141,6 @@ class saverView: ScreenSaverView {
     
     func stopSwirl() {
         update?.invalidate()
-        print("/")
     }
     
     required init?(coder: NSCoder) {
