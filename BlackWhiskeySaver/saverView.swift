@@ -48,7 +48,7 @@ class saverView: ScreenSaverView {
         
         // 0. init
         
-        let interval = 0.05     
+        let interval = 0.05
         var increment = 10.0
         let duration = 1000 
         let pause = 5000
@@ -92,7 +92,7 @@ class saverView: ScreenSaverView {
         update?.invalidate()
         update = Timer.scheduledTimer(withTimeInterval: interval, repeats: true, block: { [weak self] _ in
 
-            increment *= 1.01
+            increment *= 1.05
             x_ += (Float(increment) * Float(x_dir))
             y_ = self!.y_(x_: x_, theta: theta) * Float(y_dir)
             position_next.x = position_start.x + x_
