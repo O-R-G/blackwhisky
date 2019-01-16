@@ -39,6 +39,8 @@
 		077322AB21091C6C009027DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077322A921091C6B009027DF /* MainMenu.xib */; };
 		077322B721092B9A009027DF /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0773228321091AE1009027DF /* Shaders.metal */; };
 		933C90111FFC70A7004F93BB /* saverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933C90101FFC70A7004F93BB /* saverView.swift */; };
+		9351508321EF701A000C50B1 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9351508121EF701A000C50B1 /* thumbnail@2x.png */; };
+		9351508421EF701A000C50B1 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9351508221EF701A000C50B1 /* thumbnail.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		9336711F1FFC0E8A007CCCEB /* Black Whisky.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black Whisky.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		933671261FFC0E8A007CCCEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		933C90101FFC70A7004F93BB /* saverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saverView.swift; sourceTree = "<group>"; };
+		9351508121EF701A000C50B1 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
+		9351508221EF701A000C50B1 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 				077322A421091C6A009027DF /* Runner */,
 				0751782121E5111900209625 /* Black Whisky iOS */,
 				0751783D21E516A100209625 /* Black Whisky MacOS */,
+				9351508021EF6FF2000C50B1 /* Resources */,
 				933671201FFC0E8A007CCCEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -188,6 +193,15 @@
 				933671261FFC0E8A007CCCEB /* Info.plist */,
 			);
 			path = "Black Whisky";
+			sourceTree = "<group>";
+		};
+		9351508021EF6FF2000C50B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9351508221EF701A000C50B1 /* thumbnail.png */,
+				9351508121EF701A000C50B1 /* thumbnail@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +375,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9351508421EF701A000C50B1 /* thumbnail.png in Resources */,
+				9351508321EF701A000C50B1 /* thumbnail@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +490,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
-				INFOPLIST_FILE = BlackWhiskey/Info.plist;
+				INFOPLIST_FILE = "Black Whisky iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -497,7 +513,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
-				INFOPLIST_FILE = BlackWhiskey/Info.plist;
+				INFOPLIST_FILE = "Black Whisky iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
@@ -516,7 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = BlackWhiskeyMacOS/BlackWhiskeyMacOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Black Whisky MacOS/BlackWhiskeyMacOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
@@ -538,7 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = BlackWhiskeyMacOS/BlackWhiskeyMacOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Black Whisky MacOS/BlackWhiskeyMacOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2T5W462SEL;
