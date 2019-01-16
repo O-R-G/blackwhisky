@@ -22,12 +22,14 @@ class saverView: ScreenSaverView {
         
         super.init(frame: frame, isPreview: isPreview)
         self.animationTimeInterval = 1.0 / 30.0
-
-        self.metalView = MTKView.init(frame: self.bounds, device: MetalDevice.sharedInstance.device)
-        renderer = Renderer(metalView: metalView)
-        metalView.delegate = renderer
-        self.addSubview(metalView)
-        startSwirl()
+        
+        if let _ = MTLCreateSystemDefaultDevice() {
+            self.metalView = MTKView.init(frame: self.bounds, device: MetalDevice.sharedInstance.device)
+            renderer = Renderer(metalView: metalView)
+            metalView.delegate = renderer
+            self.addSubview(metalView)
+            startSwirl()
+        }
     }
         
     func startSwirl() {
