@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "077322A221091C6A009027DF"
-               BuildableName = "Runner.app"
-               BlueprintName = "Runner"
-               ReferencedContainer = "container:BlackWhiskey.xcodeproj">
+               BlueprintIdentifier = "9336711E1FFC0E8A007CCCEB"
+               BuildableName = "Black Whisky.saver"
+               BlueprintName = "Black Whisky"
+               ReferencedContainer = "container:Black Whisky.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "077322A221091C6A009027DF"
-            BuildableName = "Runner.app"
-            BlueprintName = "Runner"
-            ReferencedContainer = "container:BlackWhiskey.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,22 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "077322A221091C6A009027DF"
-            BuildableName = "Runner.app"
-            BlueprintName = "Runner"
-            ReferencedContainer = "container:BlackWhiskey.xcodeproj">
+            BlueprintIdentifier = "9336711E1FFC0E8A007CCCEB"
+            BuildableName = "Black Whisky.saver"
+            BlueprintName = "Black Whisky"
+            ReferencedContainer = "container:Black Whisky.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-saver BlackWhiskeySaver"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -76,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "077322A221091C6A009027DF"
-            BuildableName = "Runner.app"
-            BlueprintName = "Runner"
-            ReferencedContainer = "container:BlackWhiskey.xcodeproj">
+            BlueprintIdentifier = "9336711E1FFC0E8A007CCCEB"
+            BuildableName = "Black Whisky.saver"
+            BlueprintName = "Black Whisky"
+            ReferencedContainer = "container:Black Whisky.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
