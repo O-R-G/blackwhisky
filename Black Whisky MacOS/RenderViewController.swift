@@ -29,7 +29,7 @@ class RenderViewController: NSViewController {
             return $0
         }
         
-        startSwirl()
+        // startSwirl()
     }
     
     deinit {
@@ -54,7 +54,6 @@ class RenderViewController: NSViewController {
             print("** reset **")
         }
     }
-
 
     func startSwirl() {
 
