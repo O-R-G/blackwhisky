@@ -18,6 +18,7 @@ class RenderViewController: NSViewController {
     var eventMonitor: Any?
     weak var update: Timer?
     
+    /*
     // enter full screen and accept mouse events
     override func viewDidAppear() {
         let presOptions: NSApplication.PresentationOptions = [.fullScreen, .autoHideMenuBar]
@@ -28,6 +29,7 @@ class RenderViewController: NSViewController {
         self.view.window!.acceptsMouseMovedEvents = true
         
     }
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +42,13 @@ class RenderViewController: NSViewController {
             return $0
         }
         
+        /*
         // kill on mousemove
         NSEvent.addLocalMonitorForEvents(matching: [.mouseMoved]) {
             NSApplication.shared.terminate(self)
             return $0
         }
+        */
         
         // run automatically
          startSwirl()
@@ -165,6 +169,7 @@ class RenderViewController: NSViewController {
         update?.invalidate()
     }
 
+    /*
     override func mouseDragged(with event: NSEvent) {
         let point = event.locationInWindow
         
@@ -213,4 +218,5 @@ class RenderViewController: NSViewController {
     private func changePauseState() {
         metalView.isPaused = !metalView.isPaused
     }
+    */
 }
