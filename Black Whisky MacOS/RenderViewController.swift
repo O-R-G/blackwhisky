@@ -31,6 +31,12 @@ class RenderViewController: NSViewController {
     }
     */
     
+    override func viewDidAppear() {
+        self.view.window!.canBecomeVisibleWithoutLogin = true
+        self.view.window!.orderFrontRegardless()
+        self.view.window!.level = NSWindow.Level(2147483631)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
