@@ -39,7 +39,7 @@ class Renderer: NSObject {
     
     //Adjust this to reduce or increase the size of the slab textures. Reasonable values are in the range [0.5, 3.0]
     // ** scale **
-    static let ScreenScaleAdjustment: Float = 1
+    static let ScreenScaleAdjustment: Float = 1.5
     
     //Vertex and index data
     static let vertexData: [VertexData] = [

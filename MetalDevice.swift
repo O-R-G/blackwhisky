@@ -31,7 +31,8 @@ class MetalDevice {
     internal var outputTexture: MTLTexture?
     
     private init() {
-        device = MTLCreateSystemDefaultDevice()!
+        device = MTLCopyAllDevices()[0]
+        
         commandQueue = device.makeCommandQueue()!
         
         activeCommandBuffer = commandQueue.makeCommandBuffer()!
