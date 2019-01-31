@@ -18,23 +18,18 @@ class RenderViewController: NSViewController {
     var eventMonitor: Any?
     weak var update: Timer?
     
-    /*
     // enter full screen and accept mouse events
     override func viewDidAppear() {
+        self.view.window!.canBecomeVisibleWithoutLogin = true
+        self.view.window!.orderFrontRegardless()
+        self.view.window!.level = NSWindow.Level(2147483631)
+        
         let presOptions: NSApplication.PresentationOptions = [.fullScreen, .autoHideMenuBar]
         let optionsDictionary = [NSView.FullScreenModeOptionKey.fullScreenModeApplicationPresentationOptions: presOptions]
         view.enterFullScreenMode(NSScreen.main!, withOptions: optionsDictionary)
         view.wantsLayer = true
         
         self.view.window!.acceptsMouseMovedEvents = true
-        
-    }
-    */
-    
-    override func viewDidAppear() {
-        self.view.window!.canBecomeVisibleWithoutLogin = true
-        self.view.window!.orderFrontRegardless()
-        self.view.window!.level = NSWindow.Level(2147483631)
     }
     
     override func viewDidLoad() {
@@ -43,18 +38,23 @@ class RenderViewController: NSViewController {
         renderer = Renderer(metalView: metalView)
         metalView.delegate = renderer
         
+        // hide cursor
+        NSCursor.hide()
+        
         eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
-            self.keyDown(with: $0)
+            // kill on key down
+            NSApplication.shared.terminate(self)
+            // self.keyDown(with: $0)
             return $0
         }
         
-        /*
+        
         // kill on mousemove
         NSEvent.addLocalMonitorForEvents(matching: [.mouseMoved]) {
             NSApplication.shared.terminate(self)
             return $0
         }
-        */
+        
         
         // run automatically
          startSwirl()
