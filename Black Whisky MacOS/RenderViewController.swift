@@ -26,7 +26,7 @@ class RenderViewController: NSViewController {
         
         let presOptions: NSApplication.PresentationOptions = [.fullScreen, .autoHideMenuBar]
         let optionsDictionary = [NSView.FullScreenModeOptionKey.fullScreenModeApplicationPresentationOptions: presOptions]
-        view.enterFullScreenMode(NSScreen.main!, withOptions: optionsDictionary)
+        // view.enterFullScreenMode(NSScreen.main!, withOptions: optionsDictionary)
         view.wantsLayer = true
         
         self.view.window!.acceptsMouseMovedEvents = true
@@ -38,6 +38,7 @@ class RenderViewController: NSViewController {
         renderer = Renderer(metalView: metalView)
         metalView.delegate = renderer
         
+        /*
         // hide cursor
         NSCursor.hide()
         
@@ -48,16 +49,15 @@ class RenderViewController: NSViewController {
             return $0
         }
         
-        
         // kill on mousemove
         NSEvent.addLocalMonitorForEvents(matching: [.mouseMoved]) {
             NSApplication.shared.terminate(self)
             return $0
         }
-        
+        */
         
         // run automatically
-         startSwirl()
+        startSwirl()
     }
     
     deinit {

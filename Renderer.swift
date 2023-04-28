@@ -6,6 +6,7 @@
 //  Copyright © 2018 O-R-G inc. All rights reserved.
 //
 
+
 import MetalKit
 
 typealias FloatTuple = (float2, float2, float2, float2, float2)
@@ -306,7 +307,7 @@ extension Renderer: MTKViewDelegate {
         
         // ** change step size **
         for _ in 0..<40 {
-//            for _ in 0..<2 {
+        // for _ in 0..<2 {
             computePressure(commandBuffer: commandBuffer, dataBuffer: dataBuffer, x: pressure, b: velocityDivergence, destination: pressure)
         }
         

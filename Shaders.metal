@@ -30,7 +30,7 @@ float rand(int x, int y, int z)
 
 //Render to screen
 vertex VertexOut vertexShader(constant VertexIn* vertexArray [[buffer(0)]], unsigned int vid [[vertex_id]]) {
-    
+
     VertexIn vertexData = vertexArray[vid];
     VertexOut vertexDataOut;
     vertexDataOut.position = float4(vertexData.position.x, vertexData.position.y, 0.0, 1.0);
@@ -44,31 +44,7 @@ fragment half4 visualizeScalar(VertexOut fragmentIn [[stage_in]], texture2d<floa
     half4 color = half4(tex2d.sample(sampler2d, fragmentIn.textureCoordinates));
     
     // ** color **
-    
-    //    return half4(half3(0.0, 0.06, 0.19) * abs(color.xxx), 1.0);
     return half4(half3(0.5, 0.5, 0.5) * abs(color.xxx), 0.1);
-//    return half4(half3(0.0, 0.0, 1.0), 1.0);
-    //    float rnd = rand(color.x, color.x, color.x);
-    //    if (rnd < 0.39) {
-    //        return half4(half3(0.0, 0.0, 0.0), 1.0);
-    //    } else if (rnd < 0.90) {
-    //        return half4(half3(1.0, 1.0, 1.0), 1.0);
-    //    } else if (rnd < 0.95) {
-    //        return half4(half3(1.0, 1.0, 0.0), 1.0);
-    //    } else {
-    //        return half4(half3(1.0, 0.0, 0.0), 1.0);
-    //    }
-    //    if (color.x < 0.2) {
-    //        return half4(half3(0.0, 0.0, 0.0), 1.0);
-    //    } else if (color.x < 0.97){
-    //        return half4(half3(1.0, 1.0, 1.0), 1.0);
-    //    } else if (color.x < 0.98){
-    //        return half4(half3(1.0, 0.0, 0.0), 1.0);
-    //    } else if (color.x < 0.99){
-    //        return half4(half3(0.0, 0.0, 1.0), 1.0);
-    //    } else {
-    //        return half4(half3(1.0, 1.0, 1.0), 1.0);
-    //    }
 }
 
 fragment half4 visualizeVector(VertexOut fragmentIn [[stage_in]], texture2d<float, access::sample> tex2d [[texture(0)]]) {
@@ -173,11 +149,8 @@ fragment half2 advect(VertexOut fragmentIn [[stage_in]], texture2d<float, access
     float2 uv = (fragmentIn.textureCoordinates * screenSize) - velocity.sample(fluid_sampler, fragmentIn.textureCoordinates).xy;
     
     // ** diffusion **
-
-    //    half2 color = 0.998h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
     half2 color = 0.999h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
-//    half2 color = 1.0h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
-//    half2 color = 1.001h * half2(bilerpFrag(fluid_sampler, advected, uv, screenSize));
+
     return color.xy;
 }
 
