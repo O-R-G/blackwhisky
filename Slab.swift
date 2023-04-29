@@ -21,6 +21,11 @@ class Slab {
         textureDescriptor.usage = MTLTextureUsage(rawValue: MTLTextureUsage.shaderRead.rawValue | MTLTextureUsage.renderTarget.rawValue)
         textureDescriptor.width = width
         textureDescriptor.height = height
+        /*
+            textureDescriptor.storageMode cannot be private for apple silicon
+            extensive debugging eventually resolved the issue by referencing
+            https://github.com/andreipitis/FluidDynamicsMetal/commit/1a1d5695c8c39e8b95cfa15a64266179eb5335e5
+        */
         // textureDescriptor.storageMode = .private
         
         ping = MetalDevice.createTexture(descriptor: textureDescriptor)
