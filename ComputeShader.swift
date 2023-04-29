@@ -1,8 +1,10 @@
 //
 //  ComputeShader.swift
-//  tetracono
 //
-//  Created by Eric Li on 7/25/18.
+//  Created by Andrei-Sergiu Pițiș on 19/05/2017.
+//  https://github.com/andreipitis/FluidDynamicsMetal
+//
+//  Modified by Eric Li on 7/25/18.
 //  Copyright © 2018 O-R-G inc. All rights reserved.
 //
 
